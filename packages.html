@@ -11,10 +11,18 @@
 <body>
     <div id="preloder">
 
-        <h1 class="display-4 font-monospace text text-white" >
-            <span class="type-js headline "><span class="text-js ">Charging...</span>
-        </h1>
+
+
+<div class="text">
+
+
+       <h1 class="display-4   text-white font-monospace" >
+        <span class="type-js headline "><span class="text-js ">Charging...</span>
+    </h1>
+
+</div>
     </div>
+
 
     <div class="navigation">
 
@@ -633,7 +641,7 @@ function autoType(elementClass, typingSpeed){
   var text = thhis.text().trim().split('');
   var amntOfChars = text.length;
   var newString = "";
-  thhis.text("|");
+  thhis.text("");
   setTimeout(function(){
     thhis.css("opacity",1);
     thhis.prev().removeAttr("style");
