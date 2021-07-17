@@ -143,6 +143,7 @@ height: 100%;
 
   transition: all .8s ease-out;
 backface-visibility: hidden;
+-webkit-backface-visibility: hidden;
   border-radius: 3px;
 
   box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.3); }
