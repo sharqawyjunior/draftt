@@ -10,16 +10,12 @@
 </head>
 <body>
     <div id="preloder">
-        <div class="loader">
-            <div class="point1"></div>
-            <div class="point2"></div>
-            <div class="point3"></div>
-            <div class="point4"></div>
 
-        </div>
-
-
+        <h1 class="display-4 font-monospace text text-white" >
+            <span class="type-js headline "><span class="text-js ">Charging...</span>
+        </h1>
     </div>
+
     <div class="navigation">
 
         <input type="checkbox" id="navi-toggle" class="navigation__checkbox fixed-top" >
@@ -621,11 +617,44 @@ We also provide nutrition plans for diabetic people.
         </div>
     </div>
     </footer>
-
     <script src="bootstrap.bundle.min.js"></script>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script>
+
+function autoType(elementClass, typingSpeed){
+  var thhis = $(elementClass);
+  thhis.css({
+    "position": "relative",
+    "display": "inline-block"
+  });
+  thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+  thhis = thhis.find(".text-js");
+  var text = thhis.text().trim().split('');
+  var amntOfChars = text.length;
+  var newString = "";
+  thhis.text("|");
+  setTimeout(function(){
+    thhis.css("opacity",1);
+    thhis.prev().removeAttr("style");
+    thhis.text("");
+    for(var i = 0; i < amntOfChars; i++){
+      (function(i,char){
+        setTimeout(function() {
+          newString += char;
+          thhis.text(newString);
+        },i*typingSpeed);
+      })(i+1,text[i]);
+    }
+  },500);
+}
+
+$(document).ready(function(){
+  // Now to start autoTyping just call the autoType function with the
+  // class of outer div
+  // The second paramter is the speed between each letter is typed.
+  autoType(".type-js", 200);
+});
         function myFunction() {
   document.querySelector(".navigation__checkbox").click();
 }
@@ -659,7 +688,10 @@ else if (document.getElementById('select1').value == "7") {
 }
 $(window).on('load', function () {
   $(".loader").fadeIn();
+  $("#loader-text").delay(2000).fadeIn();
   $("#preloder").delay(3500).fadeOut();
+
+
 });
     </script>
 </body>
