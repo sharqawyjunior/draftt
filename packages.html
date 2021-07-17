@@ -9,6 +9,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="preloder">
+        <div class="loader">
+            <div class="point1"></div>
+            <div class="point2"></div>
+            <div class="point3"></div>
+            <div class="point4"></div>
+
+        </div>
+
+
+    </div>
     <div class="navigation">
 
         <input type="checkbox" id="navi-toggle" class="navigation__checkbox fixed-top" >
@@ -442,7 +453,7 @@ We also provide nutrition plans for diabetic people.
 <br><br><br>
 
 <p class="text-start lead mb-4">
-  - <span class="fw-bolder  fs-5">24 Sessions</span><span> <a href="mailto: sharqawyjunior@gmail.com" class="btn ms-5 justify-content-center btn-dark btn-lg">$191</a> </span>
+  - <span class="fw-bolder  fs-5">12 Sessions</span><span> <a href="mailto: sharqawyjunior@gmail.com" class="btn ms-5 justify-content-center btn-dark btn-lg">$191</a> </span>
 </p>
 <p class="text-start lead mb-4">
   - <span class="fw-bolder fs-5">24 Sessions</span><span> <a href="mailto: sharqawyjunior@gmail.com" class="btn ms-5 justify-content-center btn-dark btn-lg">$306</a> </span>
@@ -610,6 +621,10 @@ We also provide nutrition plans for diabetic people.
         </div>
     </div>
     </footer>
+
+    <script src="bootstrap.bundle.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         function myFunction() {
   document.querySelector(".navigation__checkbox").click();
@@ -642,6 +657,10 @@ else if (document.getElementById('select1').value == "7") {
         function myFunction() {
   document.querySelector(".navigation__checkbox").click();
 }
+$(window).on('load', function () {
+  $(".loader").fadeIn();
+  $("#preloder").delay(3500).fadeOut();
+});
     </script>
 </body>
 </html>
